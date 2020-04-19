@@ -13,7 +13,7 @@ class twosumleetcode{
 	
 	}
 	public static int[] find(int[] nums,int target){
-			int[] array= new int[2];
+			int[] array= new int[10];
 		for(int i=0;i<nums.length;i++)
        	 {
             for(int j=0;j<nums.length;j++){
