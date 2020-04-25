@@ -1,31 +1,43 @@
 import java.util.Scanner;
 
 class twosumleetcode{
-	public static void main(String[] args){
+	public static void main(String args[]) {
 		
-		int[] ar ={3,7,11,2};
-		int[] array=find(ar,9);
+		Scanner sc = new Scanner(System.in);
+		int[] arr = new int[100];
+		int len,x;
+		System.out.print("Enter how many no. You want to enter in array=");
+		len=sc.nextInt();
+		for(int i=0;i<len;i++){
+			arr[i]=sc.nextInt();
+		}
+		System.out.print("Which Summation no. you want to find=");
+		x=sc.nextInt();
+		int[] array=find(arr,x);
 		for(int a:array)
 		{
 			System.out.println(a);
 		}
+		}
 	
-	
-	}
-	public static int[] find(int[] nums,int target){
-			int[] array= new int[10];
-		for(int i=0;i<nums.length;i++)
+	public static int[] find(final int[] nums, final int target) {
+		int i=0,j=0,flag=0;
+		for(i=0;i<nums.length;i++)
        	 {
-            for(int j=0;j<nums.length;j++){
-                if(nums[i]+nums[j]==target)
+            for(j=0;j<nums.length;j++){
+                if(nums[i]+nums[j]==target && i!=j)
                 {
-                    array[0]=i;
-                    array[1]=j;
-                    return array;
+					flag=1;
+                   break;
                 }
+
     
         	}
+        	if(flag==1){
+				break;
+			}
     	}
-    	return array;
+    	int[] array={i,j};
+                    return array;
     }
 	}
